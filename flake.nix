@@ -10,6 +10,11 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    nixcord = {
+      url = "github:kaylorben/nixcord";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
     # I need the latest version of WiVRn, which is sometimes not in nixpkgs unstable
     wivrn.url = "github:wivrn/wivrn";
 
@@ -22,9 +27,9 @@
       nixosConfigurations.kimba = nixpkgs.lib.nixosSystem {
         specialArgs = { inherit inputs; };
         modules = [
-          inputs.home-manager.nixosModules.home-manager
-          ./hosts/kimba
           ./common
+          ./hosts/kimba
+          inputs.home-manager.nixosModules.home-manager
         ];
       };
 

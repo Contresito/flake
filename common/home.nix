@@ -1,6 +1,16 @@
-{ ... }:
+{ inputs, ... }:
 {
+  imports = [ ./home ];
+
   home-manager = {
+    useGlobalPkgs = true;
+    useUserPackages = true;
+    backupFileExtension = "backup";
+
+    sharedModules = [
+      inputs.nixcord.homeModules.nixcord
+    ];
+
     users.arepita = {
       home.stateVersion = "25.11";
 
@@ -16,7 +26,9 @@
             };
           };
         };
+
       };
+
     };
   };
 }
