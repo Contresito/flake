@@ -29,11 +29,8 @@
   environment.systemPackages = with pkgs; [
     neovim
     telegram-desktop
-    vscode
     mpv
     qbittorrent
-    nixfmt
-    nixd
   ];
 
   time.timeZone = "America/Argentina/Cordoba";
