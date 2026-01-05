@@ -20,7 +20,7 @@
 
   # Set-up vscode intellisense for this flake
   # by specifying where my flake is on this machine
-  home-manager.users.arepita.programs.vscode.profiles.default."nix.options.nixd.nixos"."expr" =
+  home-manager.users.arepita.programs.vscode.profiles.default.userSettings."nix.options.nixd.nixos"."expr" =
     "(builtins.getFlake \"~/void/Documents/Code/Nix/system\")";
 
   # Open ports in the firewall.
