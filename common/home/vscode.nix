@@ -17,9 +17,6 @@
           "editor.tabSize" = 2;
           "nix.enableLanguageServer" = true;
           "nix.serverPath" = "nixd";
-          "nix.options.nixd.nixos" = {
-            "expr" = "(builtins.getFlake \"~/void/Documents/Code/Nix/system\")";
-          };
         };
       };
     };
