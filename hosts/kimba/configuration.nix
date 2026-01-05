@@ -1,4 +1,4 @@
-{ ... }:
+{ pkgs, ... }:
 {
 
   networking.hostName = "kimba";
@@ -13,6 +13,10 @@
     enable = true;
     remotePlay.openFirewall = true;
   };
+
+  environment.systemPackages = with pkgs; [
+    azahar
+  ];
 
   # Set-up vscode intellisense for this flake
   # by specifying where my flake is on this machine
