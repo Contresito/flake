@@ -32,6 +32,7 @@
     mpv
     qbittorrent
     keepassxc
+    godot
   ];
 
   time.timeZone = "America/Argentina/Cordoba";
