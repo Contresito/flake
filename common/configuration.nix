@@ -31,6 +31,7 @@
     telegram-desktop
     mpv
     qbittorrent
+    keepassxc
   ];
 
   time.timeZone = "America/Argentina/Cordoba";
