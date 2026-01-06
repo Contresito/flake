@@ -36,7 +36,7 @@
     {
 
       nixosConfigurations.kimba = nixpkgs.lib.nixosSystem {
-        specialArgs = { inherit inputs; };
+        specialArgs = inputs;
         modules = [
           ./common
           ./hosts/kimba

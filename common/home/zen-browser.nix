@@ -1,7 +1,7 @@
-{ inputs, ... }:
+{ zen-browser, firefox-addons, ... }:
 {
   home-manager = {
-    sharedModules = [ inputs.zen-browser.homeModules.beta ];
+    sharedModules = [ zen-browser.homeModules.beta ];
     users.arepita.programs.zen-browser = {
       enable = true;
       profiles.default = {
@@ -26,7 +26,7 @@
             };
           };
         };
-        extensions.packages = with inputs.firefox-addons.packages.x86_64-linux; [
+        extensions.packages = with firefox-addons.packages.x86_64-linux; [
           ublock-origin
           clearurls
           plasma-integration

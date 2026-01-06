@@ -1,11 +1,11 @@
-{ pkgs, inputs, ... }:
+{ pkgs, wivrn, ... }:
 {
 
   services.wivrn = {
     enable = true;
     openFirewall = true;
     highPriority = true;
-    package = inputs.wivrn.packages.x86_64-linux.default;
+    package = wivrn.packages.x86_64-linux.default;
   };
 
   environment.systemPackages = with pkgs; [

@@ -1,8 +1,8 @@
-{ inputs, ... }:
+{ nixcord, ... }:
 {
   home-manager = {
     sharedModules = [
-      inputs.nixcord.homeModules.nixcord
+      nixcord.homeModules.nixcord
     ];
     users.arepita.programs.nixcord = {
       enable = true;
