@@ -13,6 +13,7 @@
   networking.networkmanager.enable = true;
 
   services.openssh.enable = true;
+  programs.ssh.startAgent = true;
 
   # My user
   users.users.arepita = {
