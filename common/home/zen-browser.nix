@@ -7,7 +7,7 @@
       profiles.default = {
         search = {
           force = true;
-          default = "@k";
+          default = "kagi";
           engines = {
             kagi = {
               name = "Kagi";
@@ -25,6 +25,10 @@
               definedAliases = [ "@k" ];
             };
           };
+        };
+        settings = {
+          "zen.tabs.vertical.right-side" = true;
+          "zen.view.compact.enable-at-startup" = true;
         };
         extensions.packages = with firefox-addons.packages.x86_64-linux; [
           ublock-origin
