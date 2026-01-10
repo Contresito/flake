@@ -36,7 +36,10 @@
     wivrn.url = "github:wivrn/wivrn";
 
     nix-cachyos-kernel.url = "github:xddxdd/nix-cachyos-kernel/release";
-
+    nix-gaming-edge = {
+      url = "github:powerofthe69/nix-gaming-edge";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs =
