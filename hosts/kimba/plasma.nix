@@ -17,6 +17,7 @@ in
 
   environment.systemPackages = [
     pkgs.kdePackages.kalk
+    pkgs.kdePackages.partitionmanager
   ];
 
   home-manager = {
@@ -61,6 +62,7 @@ in
                   "applications:org.telegram.desktop.desktop"
                   "applications:discord.desktop"
                 ];
+                unhideOnAttentionNeeded = false;
               };
             }
             "org.kde.plasma.marginsseparator"
