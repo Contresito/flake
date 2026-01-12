@@ -34,6 +34,7 @@ in
         wallpaperSlideShow.path = "${wallpapers}/share/wallpapers/primary";
       };
       kscreenlocker.appearance.wallpaperSlideShow.path = "${wallpapers}/share/wallpapers/secondary";
+
       panels = [
 
         {
@@ -62,7 +63,7 @@ in
                   "applications:org.telegram.desktop.desktop"
                   "applications:discord.desktop"
                 ];
-                unhideOnAttentionNeeded = false;
+                behavior.unhideOnAttentionNeeded = false;
               };
             }
             "org.kde.plasma.marginsseparator"
@@ -81,6 +82,11 @@ in
           ];
         }
       ];
+
+      configFile.kwinrc.Wayland."InputMethod" = {
+        value = "/run/current-system/sw/share/applications/fcitx5-wayland-launcher.desktop";
+        shellExpand = true;
+      };
     };
   };
 }

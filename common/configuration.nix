@@ -38,32 +38,6 @@
 
   time.timeZone = "America/Argentina/Cordoba";
 
-  # Enable English, Spanish and Japanese keyboard support
-  i18n = {
-    defaultLocale = "en_US.UTF-8";
-    extraLocales = [ "es_AR.UTF-8/UTF-8" ];
-    inputMethod = {
-      enable = true;
-      type = "fcitx5";
-      fcitx5.waylandFrontend = true;
-      fcitx5.addons = with pkgs; [
-        fcitx5-mozc-ut
-        kdePackages.fcitx5-qt
-      ];
-    };
-    extraLocaleSettings = {
-      LC_ADDRESS = "es_AR.UTF-8";
-      LC_IDENTIFICATION = "es_AR.UTF-8";
-      LC_MEASUREMENT = "es_AR.UTF-8";
-      LC_MONETARY = "es_AR.UTF-8";
-      LC_NAME = "es_AR.UTF-8";
-      LC_NUMERIC = "es_AR.UTF-8";
-      LC_PAPER = "es_AR.UTF-8";
-      LC_TELEPHONE = "es_AR.UTF-8";
-      LC_TIME = "es_AR.UTF-8";
-    };
-  };
-
   # Enable touchpad support (enabled default in most desktopManager).
   # services.xserver.libinput.enable = true;
 
