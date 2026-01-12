@@ -22,6 +22,10 @@ in
 
   home-manager = {
     sharedModules = [ plasma-manager.homeModules.plasma-manager ];
+    users.arepita.home.file.".local/share/user-places.xbel" = {
+      source = ./static/plasma-bookmarks.xbel;
+      force = true;
+    };
     users.arepita.programs.plasma = {
       enable = true;
       overrideConfig = true;
@@ -34,9 +38,9 @@ in
         wallpaperSlideShow.path = "${wallpapers}/share/wallpapers/primary";
       };
       kscreenlocker.appearance.wallpaperSlideShow.path = "${wallpapers}/share/wallpapers/secondary";
+      session.sessionRestore.restoreOpenApplicationsOnLogin = "startWithEmptySession";
 
       panels = [
-
         {
           location = "bottom";
           hiding = "autohide";
