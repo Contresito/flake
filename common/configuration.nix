@@ -34,6 +34,7 @@
     qbittorrent
     keepassxc
     godot
+    slack
   ];
 
   time.timeZone = "America/Argentina/Cordoba";
