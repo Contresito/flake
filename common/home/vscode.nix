@@ -8,6 +8,7 @@
           nodejs_22
           nixd
           nixfmt
+          pnpm
         ]
       );
       profiles.default = {
@@ -17,6 +18,8 @@
           "editor.tabSize" = 2;
           "nix.enableLanguageServer" = true;
           "nix.serverPath" = "nixd";
+          "nix.hiddenLanguageServerErrors" = [ "textDocument/definition" ];
+          "chat.disableAIFeatures" = true;
         };
       };
     };
