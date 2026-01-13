@@ -22,6 +22,7 @@
     extraGroups = [
       "networkmanager"
       "wheel"
+      "docker"
     ];
   };
 
@@ -35,7 +36,17 @@
     keepassxc
     godot
     slack
+    kitty
   ];
+
+  programs.direnv = {
+    enable = true;
+    nix-direnv.enable = true;
+  };
+
+  virtualisation.docker = {
+    enable = true;
+  };
 
   time.timeZone = "America/Argentina/Cordoba";
 
