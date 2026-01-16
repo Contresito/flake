@@ -41,6 +41,9 @@ in
           };
         };
 
+        keepassxc.enable = true;
+        keepassxc.settings.Browser.UpdateBinaryPath = false;
+
         ghostty = {
           enable = true;
           enableBashIntegration = true;

@@ -33,7 +33,6 @@
     telegram-desktop
     mpv
     qbittorrent
-    keepassxc
     godot
     slack
   ];
