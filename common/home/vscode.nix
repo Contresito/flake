@@ -15,11 +15,13 @@
         enableUpdateCheck = false;
         userSettings = {
           "editor.formatOnSave" = true;
+          "editor.defaultFormatter" = "esbenp.prettier-vscode";
           "editor.tabSize" = 2;
           "nix.enableLanguageServer" = true;
           "nix.serverPath" = "nixd";
           "nix.hiddenLanguageServerErrors" = [ "textDocument/definition" ];
           "chat.disableAIFeatures" = true;
+          "svelte.enable-ts-plugin" = true;
         };
       };
     };
