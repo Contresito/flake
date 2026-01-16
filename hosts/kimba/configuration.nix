@@ -14,7 +14,9 @@
     rebuild = pkgs.writeShellApplication {
       name = "rebuild";
       text = ''
-        sudo nixos-rebuild switch --flake ~/void/Documents/Code/Nix/system 
+        sudo nixos-rebuild switch --flake ~/void/Documents/Code/Nix/system
+        echo "Press Enter to exit..."
+        read -r 
       '';
     };
     rebuild-desktop-item = pkgs.makeDesktopItem {
