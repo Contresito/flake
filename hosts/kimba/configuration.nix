@@ -10,8 +10,25 @@
     remotePlay.openFirewall = true;
   };
 
-  environment.systemPackages = with pkgs; [
+  environment.systemPackages = with pkgs; let 
+    rebuild = pkgs.writeShellApplication {
+      name = "rebuild";
+      text = ''
+        sudo nixos-rebuild switch --flake ~/void/Documents/Code/Nix/system 
+      '';
+    };
+    rebuild-desktop-item = pkgs.makeDesktopItem {
+      name = "rebuild";
+      desktopName = "Rebuild NixOS";
+      comment = "Switch to the latest flake changes";
+      exec = "kitty rebuild";
+      icon = "nix-snowflake-white";
+      categories = [ "System" ];
+    };
+  in [
     azahar
+    rebuild
+    rebuild-desktop-item
   ];
 
   # Set-up vscode intellisense for this flake
