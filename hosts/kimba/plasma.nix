@@ -88,7 +88,7 @@ in
       ];
 
       configFile.kwinrc.Wayland."InputMethod" = {
-        value = "/run/current-system/sw/share/applications/fcitx5-wayland-launcher.desktop";
+        value = "/etc/profiles/per-user/arepita/share/applications/fcitx5-wayland-launcher.desktop";
         shellExpand = true;
       };
     };

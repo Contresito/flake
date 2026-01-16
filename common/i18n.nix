@@ -1,6 +1,7 @@
 { pkgs, ... }:
 {
   # Enable English, Spanish and Japanese keyboard support
+  environment.sessionVariables.NIXOS_OZONE_WL = "1";
 
   i18n = {
     defaultLocale = "en_US.UTF-8";
@@ -34,7 +35,7 @@
             "Default Layout" = "us";
           };
           "Groups/0/Items/0".Name = "keyboard-us";
-          "Groups/0/Items/1".Name = "keyboard-es";
+          "Groups/0/Items/1".Name = "keyboard-latam";
           "Groups/1" = {
             Name = "mozc";
             "Default Layout" = "us";
