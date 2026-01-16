@@ -88,10 +88,18 @@ in
         }
       ];
 
-      configFile.kwinrc.Wayland."InputMethod" = {
-        value = "/etc/profiles/per-user/arepita/share/applications/fcitx5-wayland-launcher.desktop";
-        shellExpand = true;
+      configFile = {
+        kwinrc.Wayland."InputMethod" = {
+          value = "/etc/profiles/per-user/arepita/share/applications/fcitx5-wayland-launcher.desktop";
+          shellExpand = true;
+        };
+        kdeglobals.General = {
+          TerminalApplication="ghostty";
+          TerminalService = "com.mitchellh.ghostty.desktop";
+        };
       };
+
+
     };
   };
 }

@@ -41,6 +41,16 @@ in
           };
         };
 
+        ghostty = {
+          enable = true;
+          enableBashIntegration = true;
+
+          settings = {
+            theme = "Catppuccin Macchiato";
+            background-opacity = "0.95";
+          };
+        };
+
       };
 
     };

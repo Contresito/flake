@@ -36,7 +36,6 @@
     keepassxc
     godot
     slack
-    kitty
   ];
 
   programs.direnv = {

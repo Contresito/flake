@@ -21,9 +21,10 @@
       name = "rebuild";
       desktopName = "Rebuild NixOS";
       comment = "Switch to the latest flake changes";
-      exec = "kitty rebuild";
+      exec = "rebuild";
       icon = "nix-snowflake-white";
       categories = [ "System" ];
+      terminal = true;
     };
   in [
     azahar
