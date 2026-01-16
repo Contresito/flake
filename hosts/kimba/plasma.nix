@@ -66,6 +66,7 @@ in
                   "applications:zen-beta.desktop"
                   "applications:org.telegram.desktop.desktop"
                   "applications:discord.desktop"
+                  "applications:org.keepassxc.KeePassXC.desktop"
                 ];
                 behavior.unhideOnAttentionNeeded = false;
               };
