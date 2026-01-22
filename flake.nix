@@ -40,6 +40,10 @@
       url = "github:powerofthe69/nix-gaming-edge";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    nvf = {
+      url = "github:NotAShelf/nvf";
+    };
   };
 
   outputs =
@@ -49,9 +53,10 @@
       nixosConfigurations.kimba = nixpkgs.lib.nixosSystem {
         specialArgs = inputs;
         modules = [
+          inputs.home-manager.nixosModules.home-manager
+          inputs.nvf.nixosModules.default
           ./common
           ./hosts/kimba
-          inputs.home-manager.nixosModules.home-manager
         ];
       };
 

@@ -29,7 +29,6 @@
   nixpkgs.config.allowUnfree = true;
 
   environment.systemPackages = with pkgs; [
-    neovim
     telegram-desktop
     mpv
     qbittorrent
