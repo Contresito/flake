@@ -30,6 +30,7 @@
     };
   in [
     azahar
+    android-studio
     rebuild
     rebuild-desktop-item
   ];
