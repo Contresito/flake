@@ -39,6 +39,8 @@
   home-manager.users.arepita.programs.vscode.profiles.default.userSettings."nix.options.nixd.nixos"."expr" =
     "(builtins.getFlake \"~/void/Documents/Code/Nix/system\")";
 
+  boot.binfmt.emulatedSystems = [ "aarch64-linux" ];
+
   # Open ports in the firewall.
   # networking.firewall.allowedTCPPorts = [ ... ];
   # networking.firewall.allowedUDPPorts = [ ... ];
