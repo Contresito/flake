@@ -24,13 +24,21 @@
       };
     };
   };
+
   programs.firefox.enable = true;
+  programs.chromium = {
+    enable = true;
+    homepageLocation = "https://arepita.moe";
+  };
+
   programs.steam = {
     enable = true;
     remotePlay.openFirewall = true;
   };
 
-  environment.systemPackages = with pkgs; let 
+  environment.systemPackages =
+    with pkgs;
+    let
     rebuild = pkgs.writeShellApplication {
       name = "rebuild";
       text = ''
@@ -53,6 +61,7 @@
     android-studio
     rebuild
     rebuild-desktop-item
+    ungoogled-chromium
   ];
 
   # Set-up vscode intellisense for this flake
