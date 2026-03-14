@@ -39,30 +39,37 @@
   environment.systemPackages =
     with pkgs;
     let
-    rebuild = pkgs.writeShellApplication {
-      name = "rebuild";
-      text = ''
-        sudo nixos-rebuild switch --flake ~/void/Documents/Code/Nix/system
-        echo "Press Enter to exit..."
-        read -r 
-      '';
-    };
-    rebuild-desktop-item = pkgs.makeDesktopItem {
-      name = "rebuild";
-      desktopName = "Rebuild NixOS";
-      comment = "Switch to the latest flake changes";
-      exec = "rebuild";
-      icon = "nix-snowflake-white";
-      categories = [ "System" ];
-      terminal = true;
-    };
-  in [
-    azahar
-    android-studio
-    rebuild
-    rebuild-desktop-item
-    ungoogled-chromium
-  ];
+      rebuild = pkgs.writeShellApplication {
+        name = "rebuild";
+        text = ''
+          sudo nixos-rebuild switch --flake ~/void/Documents/Code/Nix/system
+          echo "Press Enter to exit..."
+          read -r 
+        '';
+      };
+      rebuild-desktop-item = pkgs.makeDesktopItem {
+        name = "rebuild";
+        desktopName = "Rebuild NixOS";
+        comment = "Switch to the latest flake changes";
+        exec = "rebuild";
+        icon = "nix-snowflake-white";
+        categories = [ "System" ];
+        terminal = true;
+      };
+    in
+    [
+      azahar
+      android-studio
+      rebuild
+      rebuild-desktop-item
+      element-desktop
+      lastpass-cli
+      ungoogled-chromium
+      (python3Packages.toPythonApplication python313Packages.manga-ocr)
+      wl-clipboard
+      pkgs.steam-run
+      pkgs.airshipper
+    ];
 
   # Set-up vscode intellisense for this flake
   # by specifying where my flake is on this machine
@@ -72,8 +79,14 @@
   boot.binfmt.emulatedSystems = [ "aarch64-linux" ];
 
   # Open ports in the firewall.
-  # networking.firewall.allowedTCPPorts = [ ... ];
-  # networking.firewall.allowedUDPPorts = [ ... ];
+  networking.firewall.allowedTCPPorts = [
+    14005
+    14004
+  ];
+  networking.firewall.allowedUDPPorts = [
+    14005
+    14004
+  ];
 
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions
