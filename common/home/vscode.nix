@@ -20,8 +20,13 @@
           "nix.enableLanguageServer" = true;
           "nix.serverPath" = "nixd";
           "nix.hiddenLanguageServerErrors" = [ "textDocument/definition" ];
-          "chat.disableAIFeatures" = true;
           "svelte.enable-ts-plugin" = true;
+          "[nix]" = {
+            "editor.defaultFormatter" = "jnoortheen.nix-ide";
+          };
+          "redhat.telemetry.enabled" = false;
+          "update.mode" = "none";
+          "terminal.integrated.initialHint" = false;
         };
       };
     };
