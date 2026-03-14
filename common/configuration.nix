@@ -24,6 +24,7 @@
       "wheel"
       "docker"
       "kvm"
+      "audio"
     ];
   };
 
@@ -59,6 +60,7 @@
     alsa.enable = true;
     alsa.support32Bit = true;
     pulse.enable = true;
+    jack.enable = true;
   };
 
   # Open ports in the firewall.
