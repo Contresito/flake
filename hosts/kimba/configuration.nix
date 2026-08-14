@@ -85,6 +85,7 @@
     firewall.allowedUDPPorts = [
     14005
     14004
+      9
       25565
   ];
   };
