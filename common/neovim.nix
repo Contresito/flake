@@ -2,18 +2,18 @@
 {
   programs.nvf = {
     enable = true;
-    
+
     enableManpages = true;
 
     settings.vim = {
       vimAlias = true;
       syntaxHighlighting = true;
-      
+
       options = {
         tabstop = 2;
         shiftwidth = 0;
       };
-      
+
       theme = {
         enable = true;
         name = "catppuccin";
@@ -36,6 +36,7 @@
       autocomplete.blink-cmp.enable = true;
 
       lsp.enable = true;
+      lsp.presets.tailwindcss-language-server.enable = true;
 
       languages = {
         enableFormat = true;
@@ -48,10 +49,10 @@
         astro.enable = true;
         css.enable = true;
         html.enable = true;
-        svelte.enable = true; 
-        tailwind.enable = true;
-        ts.enable = true;
+        svelte.enable = true;
+        typescript.enable = true;
         json.enable = true;
+        # odin.enable = true;
         markdown = {
           enable = true;
           extensions = {
@@ -89,8 +90,13 @@
         modes-nvim.enable = true;
         smartcolumn.enable = true;
       };
-      
-      startPlugins = with pkgs.vimPlugins.nvim-treesitter.queries; [ ecma html_tags tsx svelte];
+
+      startPlugins = with pkgs.vimPlugins.nvim-treesitter.queries; [
+        ecma
+        html_tags
+        tsx
+        svelte
+      ];
     };
   };
 }
