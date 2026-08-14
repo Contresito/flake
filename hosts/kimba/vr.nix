@@ -1,35 +1,31 @@
 {
   pkgs,
-  wivrn,
-  nix-gaming-edge,
+  # wivrn,
   ...
 }:
 {
-  nixpkgs.overlays = [
-    nix-gaming-edge.overlays.proton-cachyos
-  ];
 
   services.lact.enable = true;
-  home-manager.users.arepita.xdg.configFile."openxr/1/active_runtime.json".source =
-    "${pkgs.wivrn}/share/openxr/1/openxr_wivrn.json";
+  # home-manager.users.arepita.xdg.configFile."openxr/1/active_runtime.json".source =
+  #   "${pkgs.wivrn}/share/openxr/1/openxr_wivrn.json";
 
-  services.wivrn = {
-    enable = true;
-    defaultRuntime = true;
-    openFirewall = true;
-    highPriority = true;
-    package = wivrn.packages.x86_64-linux.default;
-  };
+  # services.wivrn = {
+  #   enable = true;
+  #   openFirewall = true;
+  #   highPriority = true;
+  #   package = wivrn.packages.x86_64-linux.default;
+  #   package = nixpkgs-xr.packages.x86_64-linux.wivrn;
+  # };
 
-  environment.systemPackages = with pkgs; [
-    xrizer
-    wayvr
-  ];
+  # environment.systemPackages = with nixpkgs-xr.packages.x86_64-linux; [
+  #   xrizer
+  #   wayvr
+  # ];
 
   programs.steam = {
-    extraCompatPackages = with pkgs; [
-      proton-cachyos-x86_64-v3
-    ];
+    # extraCompatPackages = with pkgs; [
+    #   proton-cachyos-x86_64-v3
+    # ];
     package = pkgs.steam.override {
       extraProfile = ''
         # Fixes timezones on VRChat/Resonite

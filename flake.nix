@@ -33,7 +33,7 @@
     };
 
     # I need the latest version of WiVRn, which is sometimes not in nixpkgs unstable
-    wivrn.url = "github:wivrn/wivrn";
+    # wivrn.url = "github:wivrn/wivrn";
 
     nix-cachyos-kernel.url = "github:xddxdd/nix-cachyos-kernel/release";
     nix-gaming-edge = {
