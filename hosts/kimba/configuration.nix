@@ -56,9 +56,8 @@
       ungoogled-chromium
       (python3Packages.toPythonApplication python313Packages.manga-ocr)
       wl-clipboard
-      pkgs.steam-run
-      pkgs.airshipper
-    ];
+      steam-run
+      airshipper
 
   # Set-up vscode intellisense for this flake
   # by specifying where my flake is on this machine
