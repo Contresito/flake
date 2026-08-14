@@ -36,6 +36,7 @@
     qbittorrent
     godot
     slack
+    nixd
   ];
 
   programs.direnv = {
