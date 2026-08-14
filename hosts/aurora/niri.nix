@@ -21,6 +21,7 @@ in
     services.swaync.enable = true;
     services.swayosd.enable = true;
     services.cliphist.enable = true;
+    services.udiskie.enable = true;
 
     programs.satty = {
       enable = true;
@@ -67,7 +68,6 @@ in
         prefer-no-csd = true;
         spawn-at-startup = [
           { argv = [ "waybar" ]; }
-          { argv = [ "udiskie" ]; }
         ];
         binds = {
           "Mod+Shift+Slash".action.show-hotkey-overlay = [ ];
