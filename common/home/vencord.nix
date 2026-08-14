@@ -6,11 +6,12 @@
     ];
     users.arepita.programs.nixcord = {
       enable = true;
+      discord.vencord.enable = true;
       config = {
         plugins = {
           quickReply.enable = true;
           imageZoom.enable = true;
-          ClearURLs.enable = true;
+          clearUrls.enable = true;
           fakeNitro = {
             enable = true;
             enableEmojiBypass = false;
