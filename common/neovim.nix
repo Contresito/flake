@@ -16,8 +16,8 @@
 
       theme = {
         enable = true;
-        name = "catppuccin";
-        style = "macchiato";
+        #name = "catppuccin";
+        #style = "macchiato";
       };
 
       treesitter = {

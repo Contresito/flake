@@ -49,7 +49,7 @@ in
           enableBashIntegration = true;
 
           settings = {
-            theme = "Catppuccin Macchiato";
+            # theme = "Catppuccin Macchiato";
             background-opacity = "0.95";
           };
         };

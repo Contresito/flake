@@ -48,6 +48,15 @@
     minecraft = {
       url = "github:FreesmTeam/FreesmLauncher";
     };
+
+    niri = {
+      url = "github:epireyn/niri-flake";
+    };
+
+    stylix = {
+      url = "github:nix-community/stylix";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs =
@@ -61,6 +70,18 @@
           inputs.nvf.nixosModules.default
           ./common
           ./hosts/kimba
+        ];
+      };
+
+      nixosConfigurations.aurora = nixpkgs.lib.nixosSystem {
+      	specialArgs = inputs;
+      	modules = [
+	        inputs.nvf.nixosModules.default
+	        inputs.home-manager.nixosModules.home-manager
+          inputs.niri.nixosModules.niri
+          inputs.stylix.nixosModules.stylix
+	        ./common
+	        ./hosts/aurora
         ];
       };
 

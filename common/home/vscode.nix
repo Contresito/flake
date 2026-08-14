@@ -14,7 +14,7 @@
       profiles.default = {
         enableUpdateCheck = false;
         userSettings = {
-          "workbench.colorTheme" = "Dark Modern";
+          #"workbench.colorTheme" = "Dark Modern";
           "editor.formatOnSave" = true;
           "editor.defaultFormatter" = "esbenp.prettier-vscode";
           "editor.tabSize" = 2;
