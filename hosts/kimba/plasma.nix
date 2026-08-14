@@ -9,6 +9,7 @@ in
 
   services.displayManager.sddm.enable = true;
   services.desktopManager.plasma6.enable = true;
+  programs.kdeconnect.enable = true;
 
   environment.plasma6.excludePackages = [
     pkgs.kdePackages.kate
@@ -18,6 +19,8 @@ in
   environment.systemPackages = [
     pkgs.kdePackages.kalk
     pkgs.kdePackages.partitionmanager
+
+    pkgs.kdePackages.krfb
   ];
 
   home-manager = {
