@@ -58,6 +58,7 @@
       wl-clipboard
       steam-run
       airshipper
+      zed-editor
       jamulus
       qpwgraph
       lmms-full
