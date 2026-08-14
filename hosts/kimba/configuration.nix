@@ -62,6 +62,7 @@
       jamulus
       qpwgraph
       lmms-full
+      libreoffice-qt
 
   # Set-up vscode intellisense for this flake
   # by specifying where my flake is on this machine
