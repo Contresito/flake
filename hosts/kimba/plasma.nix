@@ -4,6 +4,30 @@ let
     mkdir -p $out/share/wallpapers/
     cp -ar ${../../assets/wallpapers}/* $out/share/wallpapers/
   '';
+
+  create-steamdeck-display = pkgs.writeShellApplication {
+    name = "create-steamdeck-display";
+    text = ''
+      krfb-virtualmonitor --resolution 1280x800 --name steamdeck-vm --password pass --port 5905 &
+      kscreen-doctor output.Virtual-steamdeck-vm.addCustomMode.1280.800.90000.full
+      kscreen-doctor output.Virtual-steamdeck-vm.mode.1280x800@90
+      kscreen-doctor output.Virtual-steamdeck-vm.position.0,0
+      kscreen-doctor output.DP-0.position.1280,0
+      kscreen-doctor output.Virtual-steamdeck-vm.primary
+
+      echo "Done! Press any key to close."
+      read -r
+    '';
+  };
+  create-steamdeck-display-item = pkgs.makeDesktopItem {
+    name = "create-steamdeck-display";
+    desktopName = "Start Steam Deck Virtual Display";
+    comment = "Creates a virtual display to use when streaming a game to the Steam Deck";
+    exec = "create-steamdeck-display";
+    icon = "nix-snowflake-white";
+    categories = [ "System" ];
+    terminal = true;
+  };
 in
 {
 
@@ -21,6 +45,10 @@ in
     pkgs.kdePackages.partitionmanager
 
     pkgs.kdePackages.krfb
+pkgs.kdePackages.kscreen
+
+    create-steamdeck-display
+    create-steamdeck-display-item
   ];
 
   home-manager = {
