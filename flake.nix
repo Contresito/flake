@@ -44,6 +44,10 @@
     nvf = {
       url = "github:NotAShelf/nvf";
     };
+
+    minecraft = {
+      url = "github:FreesmTeam/FreesmLauncher";
+    };
   };
 
   outputs =

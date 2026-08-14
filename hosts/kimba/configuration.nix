@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ pkgs, minecraft, ... }:
 {
 
   networking.hostName = "kimba";
@@ -64,6 +64,8 @@
       qpwgraph
       lmms-full
       libreoffice-qt
+    ]
+    ++ [ minecraft.packages.x86_64-linux.freesmlauncher ];
 
   # Set-up vscode intellisense for this flake
   # by specifying where my flake is on this machine
@@ -72,15 +74,20 @@
 
   boot.binfmt.emulatedSystems = [ "aarch64-linux" ];
 
+  networking = {
+    interfaces.enp8s0.wakeOnLan.enable = true;
   # Open ports in the firewall.
-  networking.firewall.allowedTCPPorts = [
+    firewall.allowedTCPPorts = [
     14005
     14004
+      25565
   ];
-  networking.firewall.allowedUDPPorts = [
+    firewall.allowedUDPPorts = [
     14005
     14004
+      25565
   ];
+  };
 
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions
