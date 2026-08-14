@@ -58,6 +58,7 @@
       wl-clipboard
       steam-run
       airshipper
+      obs-studio
       zed-editor
       jamulus
       qpwgraph
