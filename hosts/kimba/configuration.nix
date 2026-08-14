@@ -58,6 +58,9 @@
       wl-clipboard
       steam-run
       airshipper
+      jamulus
+      qpwgraph
+      lmms-full
 
   # Set-up vscode intellisense for this flake
   # by specifying where my flake is on this machine
