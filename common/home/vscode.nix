@@ -14,6 +14,7 @@
       profiles.default = {
         enableUpdateCheck = false;
         userSettings = {
+          "workbench.colorTheme" = "Dark Modern";
           "editor.formatOnSave" = true;
           "editor.defaultFormatter" = "esbenp.prettier-vscode";
           "editor.tabSize" = 2;
@@ -24,9 +25,24 @@
           "[nix]" = {
             "editor.defaultFormatter" = "jnoortheen.nix-ide";
           };
+          "[odin]" = {
+            "editor.defaultFormatter" = "DanielGavin.ols";
+          };
           "redhat.telemetry.enabled" = false;
           "update.mode" = "none";
           "terminal.integrated.initialHint" = false;
+          "editor.minimap.enabled" = false;
+          "json.schemaDownload.trustedDomains" = {
+            "https://developer.microsoft.com/json-schemas/" = true;
+            "https://json-schema.org/" = true;
+            "https://json.schemastore.org/" = true;
+            "https://raw.githubusercontent.com/DanielGavin/ols/master/misc/ols.schema.json" = true;
+            "https://raw.githubusercontent.com/devcontainers/spec/" = true;
+            "https://raw.githubusercontent.com/microsoft/vscode/" = true;
+            "https://schemastore.azurewebsites.net/" = true;
+            "https://www.schemastore.org/" = true;
+          };
+          "aws.cloudformation.telemetry.enabled" = false;
         };
       };
     };
