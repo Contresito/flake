@@ -14,8 +14,6 @@
       ];
     };
 
-    nixcord.legcord.enable = true;
-
     zed-editor = {
       enable = true;
       defaultEditor = true;
@@ -59,8 +57,7 @@
       nixd
       lmms-full
       pika-backup
-      mission-center
-      image-roll
+      fastfetch
     ];
 
   swapDevices = [

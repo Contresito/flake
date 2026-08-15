@@ -55,7 +55,7 @@ in
       settings = {
         input.touchpad.accel-speed = 0.3;
         layout = {
-          gaps = 0;
+          gaps = 4;
           preset-column-widths = [
             { proportion = 1. / 3.; }
             { proportion = 1. / 2.; }
@@ -222,5 +222,8 @@ in
     pavucontrol
     grim
     wl-clipboard
+    xwayland-satellite
+    mission-center
+    image-roll
   ];
 }
