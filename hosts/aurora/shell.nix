@@ -1,0 +1,117 @@
+# Custom shell that I made, using GTK apps.
+# Nothing out of the ordinary as you can see!
+{pkgs, ...}:
+let
+  wallpapers = pkgs.runCommand "wallpapers" { } ''
+    mkdir -p $out/share/wallpapers/
+    cp -ar ${./assets/wallpapers}/* $out/share/wallpapers/
+  '';
+in
+{
+  fonts.packages = with pkgs; [ nerd-fonts.symbols-only ];
+  services.udisks2.enable = true;
+
+  home-manager.users.arepita = {
+    programs.fuzzel.enable = true;
+    services.swaync.enable = true;
+    services.swayosd.enable = true;
+    services.cliphist.enable = true;
+    services.udiskie.enable = true;
+
+    programs.satty = {
+      enable = true;
+      settings = {
+        general.fullscreen = true;
+      };
+    };
+
+    gtk = {
+      enable = true;
+      iconTheme = {
+        name = "Papirus";
+        package = pkgs.papirus-icon-theme;
+      };
+    };
+
+    services.wpaperd = {
+      enable = true;
+      settings = {
+
+        default = {
+          path = "${wallpapers}/share/wallpapers/";
+          duration = "10m";
+        };
+      };
+    };
+
+    programs.niri.settings = {
+      spawn-at-startup = [
+        { argv = [ "waybar" ]; }
+      ];
+      binds = {
+        "Mod+D".action.spawn = "fuzzel";
+        "Mod+T".action.spawn = "ghostty";
+
+        "Mod+B" = {
+          hotkey-overlay.title = "Hide bar";
+          action.spawn-sh = "pkill waybar || exec waybar";
+        };
+
+        "Mod+H".action.spawn-sh = "cliphist list | fuzzel --dmenu --with-nth 2 | cliphist decode | wl-copy";
+        "Ctrl+Shift+Alt+Print".action.spawn-sh =
+          ''grim - | satty -f - --copy-command wl-copy -o "~/Pictures/Screenshots/%Y%m%d_%H%M%S.png"'';
+
+        "XF86AudioRaiseVolume".action.spawn = [
+          "swayosd-client"
+          "--output-volume"
+          "raise"
+        ];
+        "XF86AudioLowerVolume".action.spawn = [
+          "swayosd-client"
+          "--output-volume"
+          "lower"
+        ];
+        "XF86AudioMute".action.spawn = [
+          "swayosd-client"
+          "--output-volume"
+          "mute-toggle"
+        ];
+
+        "XF86AudioPlay".action.spawn = [
+          "swayosd-client"
+          "--playerctl"
+          "play-pause"
+        ];
+        "XF86AudioNext".action.spawn = [
+          "swayosd-client"
+          "--playerctl"
+          "next"
+        ];
+
+        "XF86MonBrightnessUp".action.spawn = [
+          "swayosd-client"
+          "--brightness"
+          "raise"
+        ];
+        "XF86MonBrightnessDown".action.spawn = [
+          "swayosd-client"
+          "--brightness"
+          "lower"
+        ];
+      };
+    };
+  };
+
+  environment.systemPackages = with pkgs; [
+    nautilus
+    nautilus-open-any-terminal
+    udiskie
+    pavucontrol
+    grim
+    wl-clipboard
+    xwayland-satellite
+    mission-center
+    image-roll
+  ];
+
+}
