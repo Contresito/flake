@@ -65,6 +65,7 @@
       pika-backup
       fastfetch
       ghostty
+      moonlight-qt
     ];
 
   swapDevices = [
