@@ -57,6 +57,15 @@
       url = "github:nix-community/stylix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    noctalia = {
+      url = "github:noctalia-dev/noctalia";
+    };
+
+    noctalia-greeter = {
+      url = "github:noctalia-dev/noctalia-greeter";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs =
@@ -80,6 +89,8 @@
 	        inputs.home-manager.nixosModules.home-manager
           inputs.niri.nixosModules.niri
           inputs.stylix.nixosModules.stylix
+          inputs.noctalia.nixosModules.default
+          inputs.noctalia-greeter.nixosModules.default
 	        ./common
 	        ./hosts/aurora
         ];

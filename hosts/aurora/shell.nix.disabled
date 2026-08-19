@@ -9,14 +9,12 @@ let
 in
 {
   fonts.packages = with pkgs; [ nerd-fonts.symbols-only ];
-  services.udisks2.enable = true;
 
   home-manager.users.arepita = {
     programs.fuzzel.enable = true;
     services.swaync.enable = true;
     services.swayosd.enable = true;
     services.cliphist.enable = true;
-    services.udiskie.enable = true;
 
     programs.satty = {
       enable = true;
@@ -103,15 +101,8 @@ in
   };
 
   environment.systemPackages = with pkgs; [
-    nautilus
-    nautilus-open-any-terminal
-    udiskie
-    pavucontrol
     grim
     wl-clipboard
-    xwayland-satellite
-    mission-center
-    image-roll
   ];
 
 }

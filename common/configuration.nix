@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ pkgs, lib, ... }:
 {
 
   nix.settings.experimental-features = [
@@ -13,7 +13,7 @@
   networking.networkmanager.enable = true;
 
   services.openssh.enable = true;
-  programs.ssh.startAgent = true;
+  programs.ssh.startAgent = lib.mkDefault true;
 
   # My user
   users.users.arepita = {

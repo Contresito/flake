@@ -2,7 +2,9 @@
 {
 
   networking.hostName = "aurora";
-  services.gnome.gcr-ssh-agent.enable = false;
+
+  services.power-profiles-daemon.enable = true;
+  services.upower.enable = true;
 
   programs.firefox.enable = true;
   home-manager.users.arepita.programs = {
@@ -17,6 +19,10 @@
     zed-editor = {
       enable = true;
       defaultEditor = true;
+    };
+
+    jujutsu = {
+      enable  = true;
     };
   };
 
@@ -58,6 +64,7 @@
       lmms-full
       pika-backup
       fastfetch
+      ghostty
     ];
 
   swapDevices = [
