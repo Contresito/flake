@@ -1,8 +1,10 @@
 { noctalia, pkgs, ... }: {
 
   nix.settings = {
-    extra-substituters = [ "https://noctalia.cachix.org "];
-    extra-trusted-public-keys = [ "noctalia.cachix.org-1:pCOR47nnMEo5thcxNDtzWpOxNFQsBRglJzxWPp3dkU4="];
+    extra-substituters = [ "https://noctalia.cachix.org " ];
+    extra-trusted-public-keys = [
+      "noctalia.cachix.org-1:pCOR47nnMEo5thcxNDtzWpOxNFQsBRglJzxWPp3dkU4="
+    ];
   };
 
   home-manager.sharedModules = [ noctalia.homeModules.default ];
@@ -29,16 +31,20 @@
 
       window-rules = [
         {
-          matches = [ { app-id = ''dev.noctalia.Noctalia''; } ];
+          matches = [ { app-id = "dev.noctalia.Noctalia"; } ];
           open-floating = true;
-          default-column-width = { fixed = 1080; };
-          default-window-height = { fixed = 920; };
+          default-column-width = {
+            fixed = 1080;
+          };
+          default-window-height = {
+            fixed = 920;
+          };
         }
       ];
 
       layer-rules = [
         {
-          matches = [ { namespace="^noctalia-backdrop"; } ];
+          matches = [ { namespace = "^noctalia-backdrop"; } ];
           place-within-backdrop = true;
         }
       ];

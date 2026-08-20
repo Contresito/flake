@@ -1,9 +1,19 @@
-{...}: {
+{ ... }: {
   home-manager.users.arepita.programs.waybar = {
     enable = true;
     settings.main = {
-      modules-left = ["niri/workspaces" "niri/window"];
-      modules-right = ["tray" "privacy" "disk" "memory" "cpu" "battery"];
+      modules-left = [
+        "niri/workspaces"
+        "niri/window"
+      ];
+      modules-right = [
+        "tray"
+        "privacy"
+        "disk"
+        "memory"
+        "cpu"
+        "battery"
+      ];
       modules-center = [ "clock" ];
 
       "niri/window" = {
@@ -14,15 +24,48 @@
       battery = {
         format = "{icon}{capacity}%";
         format-icons = {
-      		default = ["󰂎" "󰁺" "󰁻" "󰁼" "󰁽" "󰁾" "󰁿" "󰂀" "󰂁" "󰂂" "󰁹"];
-          charging = ["󰢟" "󰢜" "󰂆" "󰂇" "󰂈" "󰢝" "󰂉" "󰢞" "󰂊" "󰂋" "󰂅"];
+          default = [
+            "󰂎"
+            "󰁺"
+            "󰁻"
+            "󰁼"
+            "󰁽"
+            "󰁾"
+            "󰁿"
+            "󰂀"
+            "󰂁"
+            "󰂂"
+            "󰁹"
+          ];
+          charging = [
+            "󰢟"
+            "󰢜"
+            "󰂆"
+            "󰂇"
+            "󰂈"
+            "󰢝"
+            "󰂉"
+            "󰢞"
+            "󰂊"
+            "󰂋"
+            "󰂅"
+          ];
         };
       };
 
       cpu = {
         interval = 1;
         format = " {icon0}{icon1}{icon2}{icon3} {load}%";
-        format-icons = ["▁" "▂" "▃" "▄" "▅" "▆" "▇" "█"];
+        format-icons = [
+          "▁"
+          "▂"
+          "▃"
+          "▄"
+          "▅"
+          "▆"
+          "▇"
+          "█"
+        ];
       };
 
       memory = {
@@ -32,7 +75,7 @@
       clock = {
         format = "♥ {:%H:%M} ♥ ";
         format-alt = "♥ {:%A, %B %d, %Y (%R)} ♥";
-       	tooltip-format = "<tt><small>{calendar}</small></tt>";
+        tooltip-format = "<tt><small>{calendar}</small></tt>";
         calendar = {
           mode = "year";
           mode-mon-col = 3;
@@ -41,7 +84,7 @@
           on-scroll = 1;
           on-click-right = "mode";
           format = {
-            months =  "<span color='#b3f4f3'><b>{}</b></span>";
+            months = "<span color='#b3f4f3'><b>{}</b></span>";
             days = "<span color='#ffffff'><b>{}</b></span>";
             weeks = "<span color='#99ffdd'><b>W{}</b></span>";
             weekdays = "<span color='#95a6f4'><b>{}</b></span>";

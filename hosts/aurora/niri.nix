@@ -69,7 +69,6 @@
         "Mod+V".action.toggle-window-floating = [ ];
         "Mod+Shift+V".action.switch-focus-between-floating-and-tiling = [ ];
 
-
         "Print".action.screenshot = [ ];
         "Ctrl+Print".action.screenshot-screen = [ ];
         "Alt+Print".action.screenshot-window = [ ];
@@ -125,15 +124,15 @@
           block-out-from = "screen-capture";
         }
         {
-          matches = [ {app-id = ''org.gnome.Calculator'';}];
+          matches = [ { app-id = "org.gnome.Calculator"; } ];
           open-floating = true;
         }
         {
-          matches = [ {app-id = ''org.gnome.Nautilus'';}];
+          matches = [ { app-id = "org.gnome.Nautilus"; } ];
           open-floating = true;
         }
         {
-          matches = [ {app-id = ''org.gnome.Loupe'';}];
+          matches = [ { app-id = "org.gnome.Loupe"; } ];
           open-floating = true;
         }
       ];

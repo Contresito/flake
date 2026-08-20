@@ -24,7 +24,7 @@
     };
 
     jujutsu = {
-      enable  = true;
+      enable = true;
     };
   };
 
@@ -63,6 +63,7 @@
       rebuild-desktop-item
       obs-studio
       nixd
+      nixfmt
       lmms-full
       pika-backup
       fastfetch

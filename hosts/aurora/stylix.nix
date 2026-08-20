@@ -23,7 +23,6 @@
     };
   };
 
-
   home-manager.users.arepita = {
     stylix.targets.zen-browser.profileNames = [ "default" ];
   };

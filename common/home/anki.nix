@@ -1,4 +1,4 @@
-{pkgs, ...}:
+{ pkgs, ... }:
 let
   kanji-grid-kuuube = pkgs.anki-utils.buildAnkiAddon (finalAttrs: {
     pname = "kanji-grid-kuuube";
