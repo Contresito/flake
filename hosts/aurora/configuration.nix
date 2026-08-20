@@ -5,6 +5,7 @@
 
   services.power-profiles-daemon.enable = true;
   services.upower.enable = true;
+  services.gnome.gcr-ssh-agent.enable = false;
 
   programs.firefox.enable = true;
   home-manager.users.arepita.programs = {
@@ -19,6 +20,7 @@
     zed-editor = {
       enable = true;
       defaultEditor = true;
+      package = pkgs.zed-editor-fhs;
     };
 
     jujutsu = {

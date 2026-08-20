@@ -28,6 +28,7 @@
       };
 
       statusline.lualine.enable = true;
+      statusline.lualine.integrations.breadcrumbs.nvim-navic.enable = true;
       telescope.enable = true;
 
       withNodeJs = true;
@@ -84,7 +85,6 @@
 
       ui = {
         colorizer.enable = true;
-        breadcrumbs.enable = true;
         colorful-menu-nvim.enable = true;
         illuminate.enable = true;
         modes-nvim.enable = true;

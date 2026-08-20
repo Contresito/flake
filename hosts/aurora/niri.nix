@@ -6,7 +6,8 @@
   nixpkgs.overlays = [ niri.overlays.niri ];
   programs.niri.package = pkgs.niri-stable;
 
-
+  systemd.user.services.niri-flake-polkit.enable = false;
+  security.polkit.enable = true;
 
   home-manager.users.arepita.programs.niri = {
     settings = {
@@ -72,7 +73,6 @@
         "Print".action.screenshot = [ ];
         "Ctrl+Print".action.screenshot-screen = [ ];
         "Alt+Print".action.screenshot-window = [ ];
-
 
         "Mod+Escape" = {
           allow-inhibiting = false;
@@ -141,7 +141,6 @@
   };
 
   services.udisks2.enable = true;
-  home-manager.users.arepita.services.udiskie.enable = true;
 
   environment.systemPackages = with pkgs; [
     pavucontrol
@@ -153,11 +152,8 @@
     hyprpicker
     gnome-calculator
     loupe
+    udiskie
   ];
 
-  programs.ssh.startAgent = false;
-  services.gnome.gcr-ssh-agent.enable = true;
-  services.gnome.gnome-keyring.enable = true;
   services.gvfs.enable = true;
-
 }
