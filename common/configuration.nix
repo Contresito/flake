@@ -14,11 +14,13 @@
 
   services.openssh.enable = true;
   programs.ssh.startAgent = lib.mkDefault true;
+  programs.fish.enable = true;
 
   # My user
   users.users.arepita = {
     isNormalUser = true;
     description = "Arepita";
+    shell = pkgs.fish;
     extraGroups = [
       "networkmanager"
       "wheel"

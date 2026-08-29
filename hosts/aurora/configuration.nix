@@ -66,7 +66,6 @@
       nixfmt
       lmms-full
       pika-backup
-      fastfetch
       ghostty
       moonlight-qt
     ];

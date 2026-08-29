@@ -54,6 +54,40 @@ in
           };
         };
 
+        fish = {
+          enable = true;
+          interactiveShellInit = ''
+            set -g fish_greeting ""
+            fastfetch --logo-type small
+          '';
+          shellAliases = {
+            "ls" = "eza";
+          };
+        };
+        starship = {
+          enable = true;
+          enableFishIntegration = true;
+          presets = [
+            "nerd-font-symbols"
+          ];
+        };
+        fastfetch.enable = true;
+        tirith = {
+          enable = true;
+          enableFishIntegration = true;
+        };
+        eza = {
+          enable = true;
+          enableFishIntegration = true;
+        };
+        fd.enable = true;
+        tealdeer = {
+          enable = true;
+          settings.updates = {
+            auto_update = true;
+            auto_update_interval_hours = 24;
+          };
+        };
       };
 
     };
