@@ -152,6 +152,7 @@
     gnome-calculator
     loupe
     udiskie
+    gpu-screen-recorder
   ];
 
   services.gvfs.enable = true;

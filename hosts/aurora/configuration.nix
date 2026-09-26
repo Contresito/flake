@@ -68,6 +68,8 @@
       pika-backup
       ghostty
       moonlight-qt
+      python314Packages.manga-ocr
+      thunderbird
     ];
 
   swapDevices = [
